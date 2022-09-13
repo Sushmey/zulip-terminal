@@ -1151,9 +1151,7 @@ class Model:
         """
         Returns the count of the users with the same name as the given name.
         """
-        if not self.user_name_dict_count[user_name]:
-            return -1
-        return self.user_name_dict_count[user_name]
+        return self.user_name_dict_count.get(user_name, -1)
 
     def _subscribe_to_streams(self, subscriptions: List[Subscription]) -> None:
         def make_reduced_stream_data(stream: Subscription) -> StreamData:

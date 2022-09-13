@@ -76,12 +76,7 @@ class WriteBox(urwid.Pile):
         super().__init__(self.main_view(True))
         self.model = view.model
         self.view = view
-        # global users_list  # Making it global so it can be accessed in the MessageBox class
-        # users_list = self.view.users
-        # global user_names_counter  # Making it global so it needs to be calculated only once
-        # user_names_counter = Counter(
-        #     user["full_name"] for user in users_list
-        # )  # Counting number of users having same name
+
         # Used to indicate user's compose status, "closed" by default
         self.compose_box_status: Literal[
             "open_with_private", "open_with_stream", "closed"
