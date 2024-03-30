@@ -1941,12 +1941,12 @@ class FullRawMsgView(PopUpView):
         msg_box = MessageBox(message, controller.model, None)
 
         # Get raw message content widget list
-        response = controller.model.fetch_raw_message_content(message["id"])
+        raw_message_content = controller.model.fetch_raw_message_content(message["id"])
 
-        if response is None:
+        if raw_message_content is None:
             return
 
-        body_list = [urwid.Text(response)]
+        body_list = [urwid.Text(raw_message_content)]
 
         super().__init__(
             controller,
